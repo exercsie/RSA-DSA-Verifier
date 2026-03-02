@@ -1,0 +1,1 @@
+int modInverse(int k, int mod);

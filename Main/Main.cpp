@@ -2,6 +2,7 @@
 #include <cmath>
 #include <random>
 #include "ModularExponentiation.h"
+#include "./ModularInverse.h"
 
 int main() {
     int p, q, g, r, s, privateKey, msgHashNum, publicKey, kPowNegOne, verifySignature;
@@ -35,13 +36,8 @@ int main() {
     std::cout << "r is equal to: " << r << std::endl;
 
     // find inverse of k (random number)
-    for(int i = 1; i < q; i++) {
-        if((k * i) % q == 1) {
-            kPowNegOne = i;
-            std::cout << "K^-1 is: " << kPowNegOne << std::endl;
-            break;
-        }
-    }
+    kPowNegOne = modInverse(k, q);
+    std::cout << "K^-1 is: " << kPowNegOne << std::endl;
 
     // compute s
     s = kPowNegOne * (msgHashNum + r * privateKey) % q;
