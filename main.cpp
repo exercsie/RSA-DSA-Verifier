@@ -32,4 +32,15 @@ int main() {
         r = modExp(g, k, p) % q;
     }
     std::cout << "r is equal to: " << r << std::endl;
+
+    // compute K^-1
+    for(int i = 1; i < q; i++ {
+        if((k * i) % q == 1) {
+            kPowNegOne = i;
+            std::cout << "K^-1 is: " << kPowNegOne << std::endl;
+            break;
+        }
+    }
+
+    
 }
