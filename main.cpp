@@ -33,8 +33,8 @@ int main() {
     }
     std::cout << "r is equal to: " << r << std::endl;
 
-    // compute K^-1
-    for(int i = 1; i < q; i++ {
+    // find inverse of k (random number)
+    for(int i = 1; i < q; i++) {
         if((k * i) % q == 1) {
             kPowNegOne = i;
             std::cout << "K^-1 is: " << kPowNegOne << std::endl;
@@ -48,5 +48,15 @@ int main() {
 
     // signature
     std::cout << "The signature is (" << r << ", " << s << ")\n"; 
+
+    // find inverse of s
+    int sPowNegOne;
+    for(int i = 1; i < q; i++) {
+        if((s * i) % q == 1) {
+            sPowNegOne = i;
+            std::cout << "s^-1 is: " << sPowNegOne << std::endl;
+            break;
+        }
+    }
 
 }
