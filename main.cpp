@@ -42,5 +42,11 @@ int main() {
         }
     }
 
-    
+    // compute s
+    s = kPowNegOne * (msgHashNum + r * privateKey) % q;
+    std::cout << "s is: " << s << std::endl;
+
+    // signature
+    std::cout << "The signature is (" << r << ", " << s << ")\n"; 
+
 }
