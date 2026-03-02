@@ -24,4 +24,12 @@ int main() {
     // find public key
     publicKey = modExp(g, privateKey, p);
     std::cout << "\nThe public key is: " << publicKey << std::endl;
+
+    // compute r and find new random number if r = 0
+    int k = 0;
+    while(r == 0) {
+        k = dis(gen);
+        r = modExp(g, k, p) % q;
+    }
+    std::cout << "r is equal to: " << r << std::endl;
 }
