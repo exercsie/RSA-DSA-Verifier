@@ -59,4 +59,15 @@ int main() {
         }
     }
 
+    // verify signature
+    int w, u1, u2;
+    w = sPowNegOne;
+    std::cout << "w is: " << w << std::endl;
+
+    u1 = (msgHashNum * w) % q;
+    std::cout << "u1 is: " << u1 << std::endl;
+
+    u2 = (r * w) % q;
+    std::cout << "u2 is: " << u2 << std::endl;
+
 }
