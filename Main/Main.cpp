@@ -1,9 +1,9 @@
 #include <iostream>
 #include <cmath>
 #include <random>
-#include "./ModularExponentiation.h"
-#include "./ModularInverse.h"
-#include "./ComputeR.h"
+#include "../ModularExponentiation.h"
+#include "../ModularInverse.h"
+#include "../ComputeR.h"
 
 int main() {
     int p, q, g, r, s, privateKey, msgHashNum, publicKey, kPowNegOne, verifySignature;
@@ -28,7 +28,7 @@ int main() {
     std::cout << "\nThe public key is: " << publicKey << std::endl;
 
     // compute r and find new random number if r = 0
-    int r = 0, k;
+    int k = 0;
     while(r == 0) {
         k = dis(gen);
         std::cout << "The random number is: " << k << std::endl;
@@ -48,24 +48,17 @@ int main() {
     std::cout << "The signature is (" << r << ", " << s << ")\n"; 
 
     // find inverse of s
-    int sPowNegOne;
-    for(int i = 1; i < q; i++) {
-        if((s * i) % q == 1) {
-            sPowNegOne = i;
-            std::cout << "s^-1 is: " << sPowNegOne << std::endl;
-            break;
-        }
-    }
+    int sPowNegOne = modInverse(s, q);
+    std::cout << "s^-1 is: " << sPowNegOne << std::endl;
 
     // verify signature
-    int w, u1, u2;
-    w = sPowNegOne;
+    int w = sPowNegOne;
     std::cout << "w is: " << w << std::endl;
 
-    u1 = (msgHashNum * w) % q;
+    int u1 = (msgHashNum * w) % q;
     std::cout << "u1 is: " << u1 << std::endl;
 
-    u2 = (r * w) % q;
+    int u2 = (r * w) % q;
     std::cout << "u2 is: " << u2 << std::endl;
 
     int gu1, yu2;
