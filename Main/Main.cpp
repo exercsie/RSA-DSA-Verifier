@@ -1,8 +1,9 @@
 #include <iostream>
 #include <cmath>
 #include <random>
-#include "ModularExponentiation.h"
+#include "./ModularExponentiation.h"
 #include "./ModularInverse.h"
+#include "./ComputeR.h"
 
 int main() {
     int p, q, g, r, s, privateKey, msgHashNum, publicKey, kPowNegOne, verifySignature;
@@ -27,11 +28,11 @@ int main() {
     std::cout << "\nThe public key is: " << publicKey << std::endl;
 
     // compute r and find new random number if r = 0
-    int k = 0;
+    int r = 0, k;
     while(r == 0) {
         k = dis(gen);
         std::cout << "The random number is: " << k << std::endl;
-        r = modExp(g, k, p) % q;
+        r = computeR(g, k, p, q);
     }
     std::cout << "r is equal to: " << r << std::endl;
 

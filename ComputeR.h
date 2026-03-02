@@ -1,0 +1,1 @@
+int computeR(int g, int k, int p, int q);
