@@ -70,4 +70,17 @@ int main() {
     u2 = (r * w) % q;
     std::cout << "u2 is: " << u2 << std::endl;
 
+    int gu1, yu2;
+    gu1 = modExp(g, u1, p);
+    yu2 = modExp(publicKey, u2, p);
+
+    verifySignature = ((gu1 * yu2) % p) % q;
+
+    std::cout << "verifySignature is: " << verifySignature << std::endl;
+
+    if(verifySignature == r) {
+        std::cout << "The signature is valid as " << verifySignature << " == " << r;
+    } else {
+        std::cout << "The signature is not valid as " << verifySignature << " != " << r;
+    }
 }
