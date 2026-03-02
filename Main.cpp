@@ -29,6 +29,7 @@ int main() {
     int k = 0;
     while(r == 0) {
         k = dis(gen);
+        std::cout << "The random number is: " << k << std::endl;
         r = modExp(g, k, p) % q;
     }
     std::cout << "r is equal to: " << r << std::endl;
