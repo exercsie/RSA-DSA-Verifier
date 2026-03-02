@@ -20,4 +20,8 @@ int main() {
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> dis(1, q-1);
+
+    // find public key
+    publicKey = modExp(g, privateKey, p);
+    std::cout << "\nThe public key is: " << publicKey << std::endl;
 }
