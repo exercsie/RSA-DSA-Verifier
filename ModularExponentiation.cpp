@@ -1,5 +1,5 @@
 #include <iostream>
-#include "modularExponention.h"
+#include "ModularExponentiation.h"
 
 long long modExp(long long base, long long exp, long long mod) {
     long long result = 1;

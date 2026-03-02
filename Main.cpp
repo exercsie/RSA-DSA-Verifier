@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <random>
-#include "modularExponention.h"
+#include "ModularExponentiation.h"
 
 int main() {
     int p, q, g, r, s, privateKey, msgHashNum, publicKey, kPowNegOne, verifySignature;
