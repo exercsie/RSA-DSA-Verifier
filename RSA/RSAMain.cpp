@@ -35,10 +35,15 @@ int main() {
     } 
 
     privateKey = phiN + modularSecondNum;
-    std::cout << "Private key is: " << privateKey << std::endl;
+    std::cout << "private key is: " << privateKey << std::endl;
 
     // encrypt message
     int ciphertext;
     ciphertext = modExp(m, e, n);
     std::cout << "ciphertext key is: " << ciphertext << std::endl;
+
+    // decrypt message
+    int mPrime;
+    mPrime = modExp(ciphertext, privateKey, n);
+    std::cout << "m prime is: " << mPrime << std::endl;
 }
