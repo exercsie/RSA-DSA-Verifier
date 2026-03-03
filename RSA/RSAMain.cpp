@@ -36,4 +36,9 @@ int main() {
 
     privateKey = phiN + modularSecondNum;
     std::cout << "Private key is: " << privateKey << std::endl;
+
+    // encrypt message
+    int ciphertext;
+    ciphertext = modExp(m, e, n);
+    std::cout << "ciphertext key is: " << ciphertext << std::endl;
 }
