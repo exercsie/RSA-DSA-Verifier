@@ -3,7 +3,7 @@
 #include <random>
 #include "../ModularExponentiation.h"
 #include "../ModularInverse.h"
-#include "../ComputeR.h"
+#include "ComputeR.h"
 
 int main() {
     int p, q, g, r, s, privateKey, msgHashNum, publicKey, kPowNegOne, verifySignature;
