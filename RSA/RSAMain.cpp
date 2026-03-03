@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../ModularExponentiation.h"
 #include "../ModularInverse.h"
+#include "ModularSecondNumPart.h"
 
 int main() {
     int p, q, e, m;
@@ -23,4 +24,16 @@ int main() {
     phiN = (p-1)*(q-1);
     std::cout << "phi(n) is: " << phiN << std::endl;
 
+    // find private key
+    int privateKey, modularSecondNum;
+    modularSecondNum = getModularPart(phiN, e);
+    privateKey = e * modularSecondNum + phiN * 1;
+    int x, y;
+    if(privateKey == 1) {
+        x = modularSecondNum;
+        y = privateKey;
+    } 
+
+    privateKey = phiN + modularSecondNum;
+    std::cout << "Private key is: " << privateKey << std::endl;
 }

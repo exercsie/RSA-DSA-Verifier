@@ -1,0 +1,1 @@
+int getModularPart(int x, int y);
