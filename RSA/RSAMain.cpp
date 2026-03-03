@@ -46,4 +46,10 @@ int main() {
     int mPrime;
     mPrime = modExp(ciphertext, privateKey, n);
     std::cout << "m prime is: " << mPrime << std::endl;
+
+    if(mPrime == m) {
+        std::cout << "RSA is valid!\n";
+    } else {
+        std::cout << "RSA is invalid!\n";
+    }
 }
