@@ -2,6 +2,7 @@
 #include "../ModularExponentiation.h"
 #include "../ModularInverse.h"
 #include "ModularSecondNumPart.h"
+#include "EuclidsExtendedAlgorithm.h"
 
 int main() {
     int p, q, e, m;
@@ -25,16 +26,7 @@ int main() {
     std::cout << "phi(n) is: " << phiN << std::endl;
 
     // find private key
-    int privateKey, modularSecondNum;
-    modularSecondNum = getModularPart(phiN, e);
-    privateKey = e * modularSecondNum + phiN * 1;
-    int x, y;
-    if(privateKey == 1) {
-        x = modularSecondNum;
-        y = privateKey;
-    } 
-
-    privateKey = phiN + modularSecondNum;
+    int privateKey = miniEuclidsExtendedAlgorithm(e, phiN);
     std::cout << "private key is: " << privateKey << std::endl;
 
     // encrypt message
