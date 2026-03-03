@@ -3,7 +3,7 @@
 #include "../ModularInverse.h"
 
 int main() {
-    int p, q, e, m, n;
+    int p, q, e, m;
     std::cout << "Welcome to RSA verifier!\n";
     std::cout << "Please input first prime number, p: ";
     std::cin >> p;
@@ -13,6 +13,14 @@ int main() {
     std::cin >> e;
     std::cout << "Please input plain text number, m: ";
     std::cin >> m;
-    std::cout << "Please input modulus, n: ";
-    std::cin >> n;
+
+    // find modulus
+    int n;
+    n = p * q;
+    std::cout << "n is: " << n << std::endl;
+
+    int phiN;
+    phiN = (p-1)*(q-1);
+    std::cout << "phi(n) is: " << phiN << std::endl;
+
 }
