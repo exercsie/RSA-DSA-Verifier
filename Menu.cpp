@@ -1,8 +1,10 @@
 #include <iostream>
+#include "DSA/DSAMain.h"
+#include "RSA/RSAMain.h"
 
 int main() {
     while(true) {
-        std::cout << "Welcome to asymmetric cryptography!\n";
+        std::cout << "\n\nWelcome to asymmetric cryptography!\n";
         std::cout << "1 - DSA verification\n";
         std::cout << "2 - RSA verification\n";
         std::cout << "3 - Info\n";
@@ -21,7 +23,14 @@ int main() {
         }
 
         switch(choice) {
-            
+            case 1: {
+                DSAMain();
+                break;
+            }
+            case 2: {
+                RSAMain();
+                break;
+            }
         }
     }
 }

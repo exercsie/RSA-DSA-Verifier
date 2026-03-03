@@ -4,8 +4,9 @@
 #include "../ModularExponentiation.h"
 #include "../ModularInverse.h"
 #include "ComputeR.h"
+#include "DSAMain.h"
 
-int main() {
+void DSAMain() {
     int p, q, g, r, s, privateKey, msgHashNum, publicKey, kPowNegOne, verifySignature;
     std::cout << "Welcome to DSA verifier!\n";
     std::cout << "Please input p: ";

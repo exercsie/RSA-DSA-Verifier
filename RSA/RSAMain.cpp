@@ -3,8 +3,9 @@
 #include "../ModularInverse.h"
 #include "ModularSecondNumPart.h"
 #include "EuclidsExtendedAlgorithm.h"
+#include "RSAMain.h"
 
-int main() {
+void RSAMain() {
     int p, q, e, m;
     std::cout << "Welcome to RSA verifier!\n";
     std::cout << "Please input first prime number, p: ";
