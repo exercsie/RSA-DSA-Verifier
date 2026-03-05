@@ -28,6 +28,11 @@ void RSAMain() {
 
     // find private key
     int privateKey = miniEuclidsExtendedAlgorithm(e, phiN);
+    if(privateKey == -1) {
+        std::cout << "e and phiN are not coprime, therefore modular inverse does not exist.\n";
+        return;
+    }
+    
     std::cout << "private key is: " << privateKey << std::endl;
 
     // encrypt message
