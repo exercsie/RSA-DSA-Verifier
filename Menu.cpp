@@ -1,13 +1,15 @@
 #include <iostream>
 #include "DSA/DSAMain.h"
 #include "RSA/RSAMain.h"
+#include "TSA/TSAMain.h"
 
 int main() {
     while(true) {
         std::cout << "\n\nWelcome to asymmetric cryptography!\n";
         std::cout << "1 - DSA verification\n";
         std::cout << "2 - RSA verification\n";
-        std::cout << "3 - Info\n";
+        std::cout << "3 - TSA verification\n";
+        std::cout << "4 - Info\n";
 
 
         int choice;
@@ -18,7 +20,7 @@ int main() {
             std::cin.ignore(1000, '\n');
             std::cout << "\nInvalid input. Try again!\n\n";
             continue;
-        } else if (choice < 1 || choice > 3) {
+        } else if (choice < 1 || choice > 4) {
             std::cout << "\nInvalid choice. Try again!\n\n";
         }
 
@@ -32,6 +34,10 @@ int main() {
                 break;
             }
             case 3: {
+                TSAMain();
+                break;
+            }
+            case 4: {
                 std::cout << "\n||DSA||\n\n";
                 std::cout << "Find public key:\n";
                 std::cout << "y = g^x mod p\n\n";
