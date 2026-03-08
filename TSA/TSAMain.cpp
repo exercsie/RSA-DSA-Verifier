@@ -47,4 +47,16 @@ void TSAMain() {
     long long int c;
     c = modExp(m, e, n);
     std::cout << "c: " << c << std::endl;
+
+    long long int hiddenMessage;
+    hiddenMessage = modExp(c, d, phiNMinusOne);
+    std::cout << "Hidden message num: " << hiddenMessage << std::endl;
+
+    long long int x;
+    x = hiddenMessage - m;
+    std::cout << "x: " << x << std::endl;
+
+    long int diff;
+    diff = x - c;
+    std::cout << "diff: " << d << std::endl;
 }
