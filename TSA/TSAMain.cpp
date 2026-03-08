@@ -16,4 +16,8 @@ void TSAMain() {
     n = p * q;
     std::cout << "n: " << n << std::endl;
 
+    long long int phiMinusOne;
+    phiMinusOne = n - p - q;
+    std::cout << "lamN: " << phiMinusOne << std::endl;
+
 }
