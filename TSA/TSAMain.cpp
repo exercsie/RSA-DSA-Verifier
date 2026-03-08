@@ -51,8 +51,23 @@ void TSAMain() {
     long long int hiddenMessage;
     hiddenMessage = modExp(c, d, phiNMinusOne);
     std::cout << "Hidden message num: " << hiddenMessage << std::endl;
+    
+    long long int delta;
+    delta = hiddenMessage - m;
+    std::cout << "delta(hidden message, m): " << delta << std::endl;
 
-    long long int x;
+    long long int checkValue;
+    checkValue = modExp(hiddenMessage, 1, delta);
+    std::cout << "value: " << checkValue << std::endl;
+
+    if(checkValue == m) {
+        std::cout << "Valid as " << checkValue << " == " << m << std::endl;
+    } else {
+        std::cout << "Invalid as " << checkValue << " != " << m << std::endl;
+    }
+
+    //this doesn't work, it assumes we have m on decryption which is impossible
+    /* long long int x;
     x = hiddenMessage - m;
     std::cout << "x: " << x << std::endl;
 
@@ -73,4 +88,5 @@ void TSAMain() {
     } else {
         std::cout << "Invalid as " << mPrime << " != " << diff << std::endl; 
     }
+    */
 }
