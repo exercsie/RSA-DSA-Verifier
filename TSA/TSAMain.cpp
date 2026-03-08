@@ -39,4 +39,12 @@ void TSAMain() {
     long long int e;
     e = modExp(nPhiNProduct, 1, eSeed);
     std::cout << "e: " << e << std::endl;
+
+    long long int d;
+    d = miniEuclidsExtendedAlgorithm(e, nPhiNProduct);
+    std::cout << "d: " << d << std::endl;
+
+    long long int c;
+    c = modExp(m, e, n);
+    std::cout << "c: " << c << std::endl;
 }
