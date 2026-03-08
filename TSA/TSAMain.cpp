@@ -23,4 +23,12 @@ void TSAMain() {
     long long int nPhiNProduct;
     nPhiNProduct = phiNMinusOne * n;
     std::cout << "nphi(n)-1: " << nPhiNProduct << std::endl;
+
+    long long int average;
+    average = (phiNMinusOne + n) / 2;
+    std::cout << "average: " << average << std::endl;
+
+    long long int seed;
+    seed = phiNMinusOne - average;
+    std::cout << "seed: " << seed << std::endl;
 }
