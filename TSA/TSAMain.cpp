@@ -56,7 +56,21 @@ void TSAMain() {
     x = hiddenMessage - m;
     std::cout << "x: " << x << std::endl;
 
-    long int diff;
+    long long int diff;
     diff = x - c;
     std::cout << "diff: " << d << std::endl;
+
+    long long int ciphHash;
+    ciphHash = c + m;
+    std::cout << "ciphHash: " << ciphHash << std::endl;
+
+    long long int mPrime;
+    mPrime = hiddenMessage - ciphHash;
+    std::cout << "mPrime: " << mPrime << std::endl;
+
+    if(mPrime == diff) {
+        std::cout << "Valid as " << mPrime << " == " << diff << std::endl;
+    } else {
+        std::cout << "Invalid as " << mPrime << " != " << diff << std::endl; 
+    }
 }
