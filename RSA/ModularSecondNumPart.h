@@ -1,1 +1,1 @@
-int getModularPart(int firstNum, int secondNum);
+long long int getModularPart(long long int firstNum, long long int secondNum);

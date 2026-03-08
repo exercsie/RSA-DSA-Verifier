@@ -18,16 +18,16 @@ void RSAMain() {
     std::cin >> m;
 
     // find modulus
-    int n;
+    long long int n;
     n = p * q;
     std::cout << "n is: " << n << std::endl;
 
-    int phiN;
+    long long int phiN;
     phiN = (p-1)*(q-1);
     std::cout << "phi(n) is: " << phiN << std::endl;
 
     // find private key
-    int d = miniEuclidsExtendedAlgorithm(e, phiN);
+    long long int d = miniEuclidsExtendedAlgorithm(e, phiN);
     if(d == -1) {
         std::cout << "e and phiN are not coprime, therefore modular inverse does not exist.\n";
         return;
@@ -36,12 +36,12 @@ void RSAMain() {
     std::cout << "d is: " << d << std::endl;
 
     // encrypt message
-    int ciphertext;
+    long long int ciphertext;
     ciphertext = modExp(m, e, n);
     std::cout << "ciphertext key is: " << ciphertext << std::endl;
 
     // decrypt message
-    int mPrime;
+    long long int mPrime;
     mPrime = modExp(ciphertext, d, n);
     std::cout << "m prime is: " << mPrime << std::endl;
 

@@ -7,7 +7,7 @@
 #include "DSAMain.h"
 
 void DSAMain() {
-    int p, q, g, privateKey, msgHashNum, publicKey;
+    long long int p, q, g, privateKey, msgHashNum;
     std::cout << "Welcome to DSA verifier!\n";
     std::cout << "Please input p: ";
     std::cin >> p;
@@ -25,14 +25,15 @@ void DSAMain() {
     std::uniform_int_distribution<> dis(1, q-1);
 
     // find public key
+    long long int publicKey;
     publicKey = modExp(g, privateKey, p);
     std::cout << "\nThe public key is: " << publicKey << std::endl;
 
     // compute r and find new random number if r = 0
     int r = 0, s = 0;
-    int kPowNegOne = 0, sPowNegOne = 0, verifySignature = 0;
+    long long int kPowNegOne = 0, sPowNegOne = 0, verifySignature = 0;
     bool found = false;
-    int attempts = 0, maxAttempts = q * 10;
+    long long int attempts = 0, maxAttempts = q * 10;
     while(!found) {
         attempts++;
         if(attempts > maxAttempts) {
@@ -40,7 +41,7 @@ void DSAMain() {
             return;
         }
 
-        int k = dis(gen);
+        long long int k = dis(gen);
         std::cout << "Rand num: " << k << std::endl;
 
         // compute r
@@ -59,14 +60,14 @@ void DSAMain() {
         }
 
         // find inverse of s
-        int sPowNegOne = modInverse(s, q);
+        long long int sPowNegOne = modInverse(s, q);
 
         // verify signature
-        int w = sPowNegOne;
-        int u1 = (msgHashNum * w) % q;
-        int u2 = (r * w) % q;
+        long long int w = sPowNegOne;
+        long long int u1 = (msgHashNum * w) % q;
+        long long int u2 = (r * w) % q;
 
-        int gu1, yu2;
+        long long int gu1, yu2;
         gu1 = modExp(g, u1, p);
         yu2 = modExp(publicKey, u2, p);
 

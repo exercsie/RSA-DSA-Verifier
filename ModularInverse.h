@@ -1,1 +1,1 @@
-int modInverse(int k, int mod);
+long long int modInverse(long long int k, long long int mod);
