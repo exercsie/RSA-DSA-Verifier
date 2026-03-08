@@ -1,1 +1,1 @@
-int miniEuclidsExtendedAlgorithm(int e, int phiN);
+long long int miniEuclidsExtendedAlgorithm(long long int e, long long int phiN);
