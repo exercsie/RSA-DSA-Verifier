@@ -52,6 +52,8 @@ void TSAMain() {
     hiddenMessage = modExp(c, d, phiNMinusOne);
     std::cout << "Hidden message num: " << hiddenMessage << std::endl;
     
+    // this is still kinda bad, it assumes we have m at decryption
+    // TODO: use RSA to encrypt and decrypt m then apply it to the delta against hiddenMessage
     long long int delta;
     delta = hiddenMessage - m;
     std::cout << "delta(hidden message, m): " << delta << std::endl;

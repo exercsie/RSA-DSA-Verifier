@@ -3,7 +3,7 @@
 #include "../ModularExponentiation.h"
 #include "ModularSecondNumPart.h"
 
-long long int miniEuclidsExtendedAlgorithm(long long int e, long long int phiN) {
+long long int miniEuclidsExtendedAlgorithm(int e, int phiN) {
     if(std::gcd(e, phiN) != 1) {
         return -1; 
     }
