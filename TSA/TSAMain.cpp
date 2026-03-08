@@ -29,6 +29,14 @@ void TSAMain() {
     std::cout << "average: " << average << std::endl;
 
     long long int seed;
-    seed = phiNMinusOne - average;
+    seed = modExp(nPhiNProduct, 1, average);
     std::cout << "seed: " << seed << std::endl;
+
+    long long int eSeed;
+    eSeed = phiNMinusOne - seed;
+    std::cout << "eSeed: " << eSeed << std::endl;
+
+    long long int e;
+    e = modExp(nPhiNProduct, 1, eSeed);
+    std::cout << "e: " << e << std::endl;
 }
