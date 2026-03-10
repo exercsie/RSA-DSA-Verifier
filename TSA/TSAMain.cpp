@@ -41,7 +41,7 @@ void TSAMain() {
     std::cout << "e: " << e << std::endl;
 
     long long int d;
-    d = miniEuclidsExtendedAlgorithm(e, nPhiNProduct);
+    d = miniEuclidsExtendedAlgorithm(e, phiNMinusOne);
     std::cout << "d: " << d << std::endl;
 
     long long int c;
@@ -49,7 +49,7 @@ void TSAMain() {
     std::cout << "c: " << c << std::endl;
 
     long long int hiddenMessage;
-    hiddenMessage = modExp(c, d, phiNMinusOne);
+    hiddenMessage = modExp(c, d, n);
     std::cout << "Hidden message num: " << hiddenMessage << std::endl;
     
     // this is still kinda bad, it assumes we have m at decryption
